@@ -121,7 +121,7 @@ class BaseProgressTable(ABC):
     def __rich__(self):
         t = Table(*self._TABLE_HEADERS)
         for idx, task in enumerate(self._task_list):
-            t.add_row(f"{idx}", task.name, task.status, f"{task.duration}")
+            t.add_row(f"{idx + 1}", task.name, task.status, f"{task.duration}")
         return t
 
     def _make_table_columns_with_cells(self):
