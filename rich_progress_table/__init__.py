@@ -153,7 +153,6 @@ class ThreadedProgressTable(BaseProgressTable):
     def __init__(self, max_workers=None):
         super().__init__()
         self.max_workers = max_workers
-        self._future = None
 
     def run_tasks(self):
         with Live(self, refresh_per_second=4):
